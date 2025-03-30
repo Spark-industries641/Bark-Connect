@@ -1,0 +1,132 @@
+{
+  "name": "bark-connect",
+  "displayName": "Sidebar Html VS Code Extension",
+  "description": "Sidebar Html VS Code Extension",
+  "version": "1.0.0",
+  "publisher": "Bark",
+  "homepage": "https://github.com/KumarVariable/vscode-extension-sidebar-html/blob/afded57b2b4e13a002774b0d2d965b0a9024e83d/README.md",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KumarVariable/vscode-extension-sidebar-html.git"
+  },
+  "engines": {
+    "vscode": "^1.61.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Sidebar Html VS Code Extension Configuration",
+      "properties": {
+        "bark-connect.apiUrl": {
+          "type": "string",
+          "default": "https://localhost:7247",
+          "description": "The API URL used by the Sidebar Html VS Code Extension"
+        }
+      }
+    },
+    "colors": [
+      {
+        "id": "trackedFile.foreground",
+        "description": "Foreground color for tracked files in the explorer",
+        "defaults": {
+          "light": "#C68EFD",
+          "dark": "#C68EFD",
+          "highContrast": "#C68EFD"
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.track",
+        "title": "Track"
+      },
+      {
+        "command": "extension.untrack",
+        "title": "Untrack"
+      },
+      {
+        "command": "vscodeSidebar.openview",
+        "title": "Sidebar View"
+      },
+      {
+        "command": "vscodeSidebar.menu.view",
+        "category": "bark-connect",
+        "title": "Sample WebView in VS Code Sidebar",
+        "icon": "$(clear-all)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "custom-activitybar",
+          "title": "Bark Connect",
+          "icon": "resources/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "custom-activitybar": [
+        {
+          "type": "webview",
+          "id": "vscodeSidebar.openview",
+          "name": "View",
+          "contextualTitle": "View"
+        }
+      ],
+      "explorer": [
+        {
+          "id": "connectedFilesExplorer",
+          "name": "Bark - Connected Files"
+        }
+      ]
+    },
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.track",
+          "when": "extensionConnectedSession == true",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.untrack",
+          "when": "extensionConnectedSession == true",
+          "group": "navigation"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "vscodeSidebar.menu.view",
+          "group": "navigation",
+          "when": "view == vscodeSidebar.openview"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.61.0",
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.1",
+    "typescript": "^4.4.3",
+    "@vscode/test-electron": "^1.6.2"
+  }
+}

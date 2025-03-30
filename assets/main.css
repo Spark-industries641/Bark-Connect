@@ -1,0 +1,181 @@
+/* Base .btn class */
+.btn {
+  border-radius: 6px;
+  padding: 0.4rem 1rem; /* Reduced vertical padding to make buttons less tall */
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  transition: color 0.15s ease-in-out, 
+              background-color 0.15s ease-in-out, 
+              border-color 0.15s ease-in-out, 
+              box-shadow 0.15s ease-in-out;
+}
+
+/* Size variants */
+.btn.btn-sm {
+  max-width: 80px !important;
+  padding: 0.2rem 0.5rem; /* Adjusted padding for smaller buttons */
+  font-size: 0.875rem;
+}
+
+.btn.btn-md {
+  max-width: 140px !important;
+  padding: 0.4rem 1rem; /* Adjusted padding for medium buttons */
+  font-size: 1rem;
+}
+
+.btn.btn-l {
+  max-width: 200px !important;
+  padding: 0.6rem 1.5rem; /* Adjusted padding for large buttons */
+  font-size: 1.25rem;
+}
+
+/* Color variants */
+.btn.btn-black {
+  border-radius: 4px;
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border: 1px solid #121212;
+}
+
+.btn.btn-black:hover {
+  background-color: #1a1a1a !important;
+  border-color: #1a1a1a;
+}
+
+.btn.btn-black:focus {
+  box-shadow: 0 0 0 0.2rem rgba(18, 18, 18, 0.5);
+}
+
+.btn.btn-black:active {
+  background-color: #0f0f0f !important;
+  border-color: #0f0f0f;
+}
+
+.btn.btn-black:disabled {
+  background-color: #121212;
+  border-color: #121212;
+  cursor: not-allowed;
+}
+
+.btn.btn-white {
+  border-radius: 12px;
+  background-color: #ffffff !important;
+  color: #212121 !important;
+  margin-left: 0.5rem;
+  margin-bottom: 5px;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.btn.btn-white:hover {
+  background-color: #f2f2f2 !important;
+}
+
+.btn.btn-white:focus {
+  box-shadow: 0 0 0 0.2rem rgba(33, 33, 33, 0.25);
+}
+
+.btn.btn-white:active {
+  background-color: #e6e6e6 !important;
+}
+
+.btn.btn-white:disabled {
+  background-color: #ffffff;
+  color: #212121;
+  cursor: not-allowed;
+}
+
+/* .btn-secondary class */
+.btn.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border: 1px solid #6c757d;
+}
+
+/* Adjusted padding for .btn-secondary to make them less tall */
+.btn.btn-secondary {
+  padding: 0.4rem 1rem; /* Reduced vertical padding */
+}
+
+.btn.btn-secondary:hover {
+  color: #fff;
+  background-color: #5c636a;
+  border-color: #565e64;
+}
+
+.btn.btn-secondary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.25);
+}
+
+.btn.btn-secondary:active {
+  color: #fff;
+  background-color: #565e64;
+  border-color: #51585e;
+  box-shadow: inset 0 3px 5px #00000020;
+}
+
+.btn.btn-secondary:disabled {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* New styles for button grouping */
+.connection-wrapper .button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between buttons */
+  margin-top: 1rem; /* Space above the button group */
+}
+
+.connection-wrapper .button-group .btn {
+  width: 100%; /* Full width buttons */
+  display: block; /* Ensure buttons take up the full line */
+}
+
+/* New styles for input fields */
+.custom-input {
+  background: #3f3f3f;
+  border: 1px solid #212121;
+  color: #fff;
+  padding: 0.5rem 1rem; /* Add padding for better usability */
+  border-radius: 4px; /* Optional: Rounded corners */
+  font-size: 1rem; /* Ensure readable text */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in width */
+  margin-bottom: 1rem; /* Margin between input fields */
+}
+
+/* Placeholder Text Styling */
+.custom-input::placeholder {
+  color: #b3b3b3; /* Lighter color for placeholders */
+  opacity: 1; /* Ensure full visibility */
+}
+
+/* Focus State Styling */
+.custom-input:focus {
+  border-color: #6c757d; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(108, 117, 125, 0.5); /* Add subtle shadow */
+}
+
+/* Optional: Hover State Styling */
+.custom-input:hover {
+  border-color: #5c636a; /* Darken border on hover */
+}
+
+/* Styling the login form container for better layout */
+.login-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* Space between form elements */
+  max-width: 400px; /* Optional: Limit form width */
+  margin: 0 auto; /* Optional: Center the form */
+}
