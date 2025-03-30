@@ -1,14 +1,14 @@
 {
   "name": "bark-connect",
-  "displayName": "Sidebar Html VS Code Extension",
-  "description": "Sidebar Html VS Code Extension",
+  "displayName": "Bark VSCode Connector",
+  "description": "Bark VSCode Connector",
   "version": "1.0.0",
   "publisher": "Bark",
-  "homepage": "https://github.com/KumarVariable/vscode-extension-sidebar-html/blob/afded57b2b4e13a002774b0d2d965b0a9024e83d/README.md",
+  "homepage": "https://github.com/Spark-industries641/Bark-Connect/blob/main/README.md",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KumarVariable/vscode-extension-sidebar-html.git"
+    "url": "https://github.com/Spark-industries641/Bark-Connect"
   },
   "engines": {
     "vscode": "^1.61.0"
@@ -21,12 +21,12 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Sidebar Html VS Code Extension Configuration",
+      "title": "Bark VSCode Connector Configuration",
       "properties": {
         "bark-connect.apiUrl": {
           "type": "string",
           "default": "https://localhost:7247",
-          "description": "The API URL used by the Sidebar Html VS Code Extension"
+          "description": "The API URL used by the Bark VSCode Connector"
         }
       }
     },
